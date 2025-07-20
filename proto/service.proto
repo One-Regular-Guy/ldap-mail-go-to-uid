@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "/proto";
+service SecureService {
+  rpc SecureEcho (EncryptedRequest) returns (EncryptedResponse);
+}
+
+message EncryptedRequest {
+  string payload = 1;
+}
+
+message EncryptedResponse {
+  string payload = 1;
+}
